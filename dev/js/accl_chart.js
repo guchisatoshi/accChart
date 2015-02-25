@@ -8,7 +8,7 @@ jQuery(function($){
 
     /**
      * canvas要素の取得等。
-     * Chart.jsのオプションでレスポンシブにできるが、とりあえず読み込み時の
+     * Chart.jsのオプションでレスポンシブにできるけれど、とりあえず読み込み時の
      * body要素の幅を取ってくる形にする。
      */
     bodyWidth = $('body').width(),
