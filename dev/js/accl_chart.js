@@ -30,7 +30,9 @@ jQuery(function($){
             datasets: [
                 { strokeColor: '#ff0066', data: [] },
                 { strokeColor: '#33ff00', data: [] },
-                { strokeColor: '#0033ff', data: [] }
+                { strokeColor: '#0033ff', data: [] },
+                { strokeColor: '#aaaaaa', data: [] }
+
             ]
         },
         {
