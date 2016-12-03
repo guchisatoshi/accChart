@@ -6,7 +6,8 @@
 jQuery(function($){
     var
     acclChart = window.acclChart,
-    display = { x : $('#x'), y : $('#y'), z : $('#z') },
+    /* display = { x : $('#x'), y : $('#y'), z : $('#z') },*/
+    display = { x : $('#x'), y : $('#y'), z : $('#z') , v : $('#v') },
 
     /**
      * ローパスフィルタを実装するための関数。
@@ -61,7 +62,8 @@ jQuery(function($){
          */
         x = effectorX.lpf(acclData.x),
         y = effectorY.lpf(acclData.y),
-        z = effectorZ.lpf(acclData.z);
+        z = effectorZ.lpf(acclData.z),
+        v = sqrt(x*x + y*y + z*z)*9.8/(e.originalEvent.interval/1000);
 
         /**
          * グラフの他、実データを表示。
@@ -69,11 +71,12 @@ jQuery(function($){
         display.x.text(x);
         display.y.text(y);
         display.z.text(z);
+        display.v.text(v);
 
        /**
         * Chart.jsのメソッドでデータを追加する。
         */
-       acclChart.addData([x,y,z],'');
+       acclChart.addData([x,y,z,v],'');
 
        /**
         * 古いデータを削除する。
